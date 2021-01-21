@@ -1,0 +1,150 @@
+.b-buttons {
+	top: 100px;
+	left: 200px;
+}
+.b-buttons::before{
+	content: '';
+	display: inline-block;
+	background: #dddddc;
+	width: 300px;
+	height: 40px;
+	transform: skewX(-40deg);
+	position: absolute;
+/* 	border-radius: 10px 10px 0 0; */
+	top: -40px;
+	left: 17px;
+  }
+
+
+.b-buttons::after{
+	content: '';
+	display: inline-block;
+	background: #bebebd;
+	width: 34px;
+	height: 300px;
+	transform: skewY(-50deg);
+	position: absolute;
+/* 	border-radius: 0 10px 10px 0; */
+	top: -20px;
+	left: 100%;
+}
+
+/* first five buttons box/fidget */
+.b-buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap: 0px 0px;
+	grid-template-areas:
+		"first . second"
+		". third ."
+		"fourth . fifth";
+}
+.first {
+	grid-area: first;
+}
+.second {
+	grid-area: second;
+}
+.third {
+	grid-area: third;
+}
+.fourth {
+	grid-area: fourth;
+}
+.fifth {
+	grid-area: fifth;
+}
+
+.first,
+.second,
+.third,
+.fourth,
+.fifth {
+	position: absolute;
+	margin: 10px;
+	width: 80px;
+	height: 80px;
+	background-color: #3aafd5;
+	border: none;
+	border-radius: 50px;
+	box-shadow: 0 0 10px black;
+	outline: none;
+}
+
+.first:hover {
+	width: 100px;
+	height: 100px;
+	background: #06a306;
+}
+.second:hover {
+	animation: second 3s;
+}
+@keyframes second {
+	0% {
+		transform: translate3d(0);
+	}
+	50% {
+		transform: translate3d(-20px, 20px, 20px);
+	}
+	100% {
+		transform: translate3d(0);
+	}
+}
+
+.third:hover {
+	animation: third 3s;
+}
+
+@keyframes third {
+	0% {
+		transform: rotateY(0);
+		background:#f82121a4;
+	}
+	50% {
+		transform: rotateY(-90deg);
+		background:#f82121;
+	}
+	1000% {
+		transform: rotateY(0);
+	}
+}
+
+.fourth:hover {
+	animation: fourth 3s;
+	transition: linear;
+}
+
+@keyframes fourth {
+	0% {
+		transform: translateX(0) rotate(340deg);
+	}
+	50% {
+		transform: translateX(100px) rotate(340deg);
+	}
+	100% {
+		transform: translateX(0px) rotate(340deg);
+	}
+}
+
+.fifth:hover {
+	animation: fifth 3s;
+}
+
+@keyframes fifth {
+	0% {
+		transform: 0;
+		background:#2020fcc7;
+	}
+	50% {
+		transform: scaleX(1.5);
+	}
+	75% {
+		transform: scaleX(0);
+		background:#4545ff;
+	}
+
+	100% {
+		transform: 0;
+	}
+}
